@@ -4,7 +4,7 @@ defmodule GelfLogger.Mixfile do
   def project do
     [app: :gelf_logger,
      version: "0.8.0",
-     elixir: "~> 1.2",
+     elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps(),
@@ -25,7 +25,7 @@ defmodule GelfLogger.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [extra_applications: [:crypto, :logger]]
   end
 
   defp deps do
